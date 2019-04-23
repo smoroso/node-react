@@ -6,7 +6,13 @@
   "env": {
     "es6": true,
     "browser": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   },
   "parserOptions": {
     "ecmaVersion": 8,
@@ -17,7 +23,7 @@
     "sourceType": "module"
   },
   "parser": "babel-eslint",
-  "plugins": ["react"],
+  "plugins": ["react", "jest"],
   "rules": {
     "no-var": "error",
     "prefer-const": "error",

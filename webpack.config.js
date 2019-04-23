@@ -5,6 +5,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "src/public"),
     filename: "application.js",
+    publicPath: "/"
   },
   devServer: {
     contentBase: __dirname + "/src/public/",
@@ -13,12 +14,14 @@ module.exports = {
     historyApiFallback: true
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: "babel-loader"
+        test: /.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: "babel-loader",
+        }
       }
     ]
   }
-}
+};
